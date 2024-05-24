@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "Zerodha Pro Mode",
+    "description": "Zerodha Pro Mode",
+    "version": "1.0",
+    "icons": {
+      "16": "icon.png",
+      "32": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_icon": {
+        "16": "icon.png",
+        "32": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+      }
+    },
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["https://kite.zerodha.com/holdings"],
+            "js": ["content.js"]
+        }
+      ]
+  }
